@@ -1,8 +1,9 @@
 package com.hill.adapter;
 
-import com.hill.adapter.device.LapTopAdapter;
+import com.hill.adapter.device.Adapter;
+import com.hill.adapter.device.Device;
 import com.hill.adapter.device.LapTop;
-import com.hill.adapter.power.HousePower;
+import com.hill.adapter.device.LapTopAdapter;
 
 /**
  * @author HILL
@@ -12,9 +13,8 @@ import com.hill.adapter.power.HousePower;
 public class Demo {
 
     public static void main(String[] args) {
-        HousePower power = new HousePower();
-        LapTopAdapter adapter = new LapTopAdapter(power);
-        LapTop laptop = new LapTop(adapter);
+        Adapter adapter = new LapTopAdapter();
+        Device laptop = new LapTop(adapter);
         laptop.startUse();
 
     }

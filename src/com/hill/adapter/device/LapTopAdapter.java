@@ -7,19 +7,19 @@ import com.hill.adapter.power.HousePower;
  * @version V1.0
  * @date 2019/7/8
  **/
-public class LapTopAdapter implements Device{
-
-    private final HousePower power;
-
-   public LapTopAdapter(HousePower power){
-        this.power = power;
-    }
+public class LapTopAdapter extends HousePower implements Adapter{
 
 
+    /**
+     * TODO
+     * @Author: HILL
+     * @date: 2019/7/9 14:06
+     * @param: []
+     * @return: int 输出适配器转换后的电压值
+    **/
     @Override
-    public void startUse() {
-        int housePower = power.outPutPower();
-        int laptopPower = housePower / 11;
-        System.out.println("电源适配器工作，电压转换为"+laptopPower+"V");
+    public int outConversionVoltage() {
+        System.out.println("电压为"+super.outPutPower()+"开始转换");
+        return super.outPutPower()/11;
     }
 }

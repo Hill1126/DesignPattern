@@ -9,15 +9,19 @@ package com.hill.adapter.device;
  **/
 public class LapTop implements Device{
 
-    private LapTopAdapter adapter ;
+    private Adapter adapter ;
+    private int VOLTAGE = 20;
 
-    public LapTop(LapTopAdapter adapter) {
+    public LapTop(Adapter adapter) {
         this.adapter = adapter;
     }
 
     @Override
     public void startUse() {
-        adapter.startUse();
-        System.out.println("笔记本启动");
+        if(adapter.outConversionVoltage()==VOLTAGE){
+            System.out.println("电压为"+VOLTAGE+"-----笔记本启动");
+        }else{
+            System.out.println("电压输入不正确，启动失败。异常电压为："+adapter.outConversionVoltage());
+        }
     }
 }
