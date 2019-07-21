@@ -15,10 +15,8 @@ public class HousePower implements Power{
     private static final int VOLTAGE = 220;
 
     /**
-     * TODO
      * @Author: HILL
      * @date: 2019/7/8 15:08
-     * @param: []
      * @return: int 中国家庭用电电压
     **/
     @Override

@@ -19,6 +19,7 @@ public class LapTopAdapter extends HousePower implements Adapter{
     **/
     @Override
     public int outConversionVoltage() {
+        //进行电压转换
         System.out.println("电压为"+super.outPutPower()+"开始转换");
         return super.outPutPower()/11;
     }
